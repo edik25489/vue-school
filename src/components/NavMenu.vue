@@ -5,9 +5,9 @@
 <template>
   <nav class="sticky top-0 bg-white border-b-2 border-gray-300 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="https://chpk.rchuv.ru/" target="_blank" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="/logo.jpg" height="50" width="50" class="object-contain"/>
-      </a>
+      </router-link>
       <button data-collapse-toggle="navbar-default" type="button"
               class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-default" aria-expanded="false">

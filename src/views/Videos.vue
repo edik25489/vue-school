@@ -4,8 +4,8 @@ const videos = useVideosStore()
 </script>
 
 <template>
-  <div class="sm:container mx-auto flex flex-row flex-wrap justify-around">
 
+  <div class="sm:container mx-auto flex flex-row flex-wrap justify-around">
     <section class="mt-12 mx-auto px-4 max-w-screen-xl lg:px-8">
       <div class="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         <article v-for="(video, index) in videos.getVideos" :key="index" class="max-w-md mx-auto mt-4 shadow-sm border rounded-md duration-300 hover:shadow-lg">

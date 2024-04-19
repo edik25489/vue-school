@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   course:{}
 })
 import {onMounted} from "vue"
@@ -31,7 +31,7 @@ onMounted(() => {
 
             <div class="max-w-screen-xl mx-auto text-gray-600">
                 <div class="flex flex-col items-stretch rounded-xl border-2">
-                  <ul v-for="(plan, index) in props.course.program" :key="index" class='p-8 space-y-3'>
+                  <ul v-for="(plan, index) in course.program" :key="index" class='p-8 space-y-3'>
                     <li class="pb-2 text-gray-800 font-medium">
                       {{plan.name}}
                     </li>

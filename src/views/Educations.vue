@@ -114,7 +114,7 @@
   </section>
   <div class="mx-auto flex flex-col items-center mt-4">
     <span class="text-3xl mb-2 text-teal-500">Оставьте заявку на обучение</span>
-    <iframe class="shadow-2xl" src="https://forms.yandex.ru/cloud/65f57a9ee010dbd00526f24e/?iframe=1" frameborder="0" name="ya-form-65f57a9ee010dbd00526f24e" width="650"></iframe>
+    <iframe class="shadow-2xl min-w-96 p-3" src="https://forms.yandex.ru/u/6620f73f84227c0ad3eaa5eb/?iframe=1"  name="ya-form-6620f73f84227c0ad3eaa5eb"></iframe>
   </div>
   </template>
 
