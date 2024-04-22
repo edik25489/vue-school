@@ -1,32 +1,39 @@
 <script setup lang="ts">
 import {useVideosStore} from "../store/videos.ts";
+import {useCategoriesStore} from "../store/categories.ts";
+
 const videos = useVideosStore()
+const categories = useCategoriesStore()
 </script>
 
 <template>
 
-  <div class="sm:container mx-auto flex flex-row flex-wrap justify-around">
-    <section class="mt-12 mx-auto px-4 max-w-screen-xl lg:px-8">
-      <div class="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-        <article v-for="(video, index) in videos.getVideos" :key="index" class="max-w-md mx-auto mt-4 shadow-sm border rounded-md duration-300 hover:shadow-lg">
+  <div class="sm:container mt-12 max-w-md mx-auto flex flex-row justify-between">
+    <div class="flex basis-1/5">
+      <ul>
+        <li v-for="(ctg, ind) in categories.getCategories" :key="ind">
+          <p>{{ctg.name}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="flex basis-4/5">
+      <ul class="flex flex-wrap">
+        <li v-for="(video, index) in videos.getVideos" :key="index"
+            class="flex flex-row max-w-md m-4 shadow-sm border rounded-md duration-300 hover:shadow-lg">
           <a :href=video.src>
-            <img :src=video.img alt="описание" class="w-full h-48 rounded-t-md object-contain" />
+            <img :src=video.img alt="описание" class="flex-none h-32 w-60 rounded-t-md object-cover"/>
           </a>
-            <div class="flex items-center mt-2 pt-3 ml-4 mr-2">
+          <div class="flex flex-col pt-3 pl-4 pr-2 pb-3">
+            <h3 class="text-xl text-gray-900">
+              {{ video.name }}
+            </h3>
+            <p class="text-gray-400 text-sm mt-1">{{ video.category.name }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
 
-              <div class="ml-3">
-                <span class="block text-gray-900"></span>
-              </div>
-            </div>
-            <div class="pt-3 ml-4 mr-2 mb-3">
-              <h3 class="text-xl text-gray-900">
-                {{video.name}}
-              </h3>
-              <p class="text-gray-400 text-sm mt-1">{{video.desc}}</p>
-            </div>
-        </article>
-      </div>
-    </section>
+
   </div>
 </template>
 
