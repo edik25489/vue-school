@@ -5,15 +5,14 @@ import {computed, ref} from "vue";
 
 const videos = useVideosStore().getVideos
 const categories = useCategoriesStore()
-const setCategories = ref([]);
-const setVideos = computed({
-  get(){
-    return videos
-  },
-  set(){
-    if (setCategories){
-    }
-  }
+const setCategories = ref<Array>([]);
+const setVideos = computed(()=>{
+      return videos.filter(function (elem){
+            if(setCategories.value.length > 0){
+                return setCategories.value.indexOf(elem.category.id) > -1
+            }
+            else return true
+          })
 })
 </script>
 
