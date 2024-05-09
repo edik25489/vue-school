@@ -6,9 +6,9 @@ const students = useMetodicsStore().getStudents
 </script>
 
 <template>
-<div class="mt-6 flex flex-col mx-auto sm:container py-1">
+<div class="mt-1 flex flex-col mx-auto sm:container py-1">
   <div class="sm:container mx-auto text-gray-600">
-    <div class="flex flex-col items-stretch">
+    <div class="bg-white rounded-xl flex flex-col items-stretch">
       <div class="mx-5 pb-2 text-gray-800 font-medium text-2xl">
         Методические указания для подготовки и защиты выпускной квалификационной работы по программе подготовки специалистов среднего звена
       </div>
@@ -27,9 +27,9 @@ const students = useMetodicsStore().getStudents
       </ul>
     </div>
   </div>
-  <div class="mt-6 max-w-screen-xl mx-auto text-gray-600">
-    <div class="flex flex-col items-stretch">
-      <div class="pb-2 text-gray-800 font-medium text-2xl">
+  <div class="px-3 mt-6 max-w-screen-xl mx-auto text-gray-600">
+    <div class="bg-white flex flex-col items-stretch rounded-xl">
+      <div class="p-2 text-center text-gray-800 font-medium text-2xl">
         Методические указания по учебным предметам, дисциплинам, модулям
       </div>
       <ul v-for="(student, index) in students" :key="index" class='p-3 space-y-3'>

@@ -10,7 +10,7 @@ onMounted(() => {
 
 <template>
   <NavMenu/>
-  <div class="container-sm">
+  <div class="container-sm bg-gray-100">
     <slot/>
   </div>
   <Footer/>

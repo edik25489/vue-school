@@ -6,7 +6,7 @@ const courses = useCoursesStore()
 
 <template>
 
-  <div class="sm:container mx-auto flex flex-row flex-wrap justify-around mt-4 gap-4">
+  <div class="mt-1 pt-2 sm:container mx-auto flex flex-row flex-wrap justify-around gap-4">
     <div class="w-full max-w-72 bg-white hover:bg-slate-100 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
          v-for="item in courses.getCourses">
       <router-link

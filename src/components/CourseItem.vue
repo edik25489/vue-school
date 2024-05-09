@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps({
-  course:{}
+  course: Object
 })
 import {onMounted} from "vue"
 import {initFlowbite} from "flowbite"
@@ -11,8 +11,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-row items-center justify-around bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" :src=course.img alt="">
+  <div class="container flex mt-1 md:flex-row flex-col items-center justify-around bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <img class="m-2 object-cover w-full rounded-t-lg h-40 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" :src=course.img alt="">
     <div class="flex flex-col justify-between p-4 leading-normal">
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {{course.name}}
@@ -25,12 +25,28 @@ onMounted(() => {
 
   <section class='py-14'>
     <div class="max-w-screen-xl mx-auto px-4 gap-12 md:flex md:px-8">
+      <div class='flex-1 md:mt-0'>
+        <ul class='space-y-4 divide-y'>
+          <li class="bg-white p-5 rounded-md border border-t-gray-400" v-for="(item, index) in course.about" :key="index">
+            <summary class="flex items-center justify-between font-semibold text-gray-700">
+              {{ item.name }}
+            </summary>
+            <p class='mt-3 text-gray-600 leading-relaxed' v-html="item.desc"></p>
+          </li>
+        </ul>
+        <ul class='space-y-4 divide-y mt-3'>
+          <li class="bg-white p-5 rounded-md border border-t-gray-400" v-for="(item, index) in course.teacher" :key="index">
+            <summary class="flex items-center justify-between text-xl font-bold text-gray-700">
+              Наши преподаватели: {{ item.name }}
+            </summary>
+            <p class='mt-3 text-gray-600 leading-relaxed' v-html="item.desc"></p>
+          </li>
+        </ul>
+      </div>
       <div class='flex-1'>
         <div class="max-w-lg">
-
-
             <div class="max-w-screen-xl mx-auto text-gray-600">
-                <div class="flex flex-col items-stretch rounded-xl border-2">
+              <div class="bg-white flex flex-col items-stretch rounded-xl border-2">
                   <ul v-for="(plan, index) in course.program" :key="index" class='p-8 space-y-3'>
                     <li class="pb-2 text-gray-800 font-medium">
                       {{plan.name}}
@@ -46,27 +62,7 @@ onMounted(() => {
                   </ul>
                 </div>
             </div>
-
-
         </div>
-      </div>
-      <div class='flex-1 md:mt-0'>
-        <ul class='space-y-4 divide-y'>
-          <li class="py-5" v-for="(item, index) in course.about" :key="index">
-            <summary class="flex items-center justify-between font-semibold text-gray-700">
-              {{ item.name }}
-            </summary>
-            <p class='mt-3 text-gray-600 leading-relaxed' v-html="item.desc"></p>
-          </li>
-        </ul>
-        <ul class='space-y-4 divide-y'>
-          <li class="py-5" v-for="(item, index) in course.teacher" :key="index">
-            <summary class="flex items-center justify-between text-xl font-bold text-gray-700">
-              Наши преподаватели: {{ item.name }}
-            </summary>
-            <p class='mt-3 text-gray-600 leading-relaxed' v-html="item.desc"></p>
-          </li>
-        </ul>
       </div>
     </div>
   </section>

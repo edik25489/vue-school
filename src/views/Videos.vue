@@ -17,11 +17,11 @@ const setVideos = computed(()=>{
 </script>
 
 <template>
-  <div class="sm:container mt-12 w-screen mx-auto flex flex-row justify-between">
-    <div class="container flex basis-2/5">
+  <div class="sm:container mt-1 mr-4 sm:mx-auto flex flex-col justify-center sm:flex-row sm:justify-between">
+    <div class="container flex sm:basis-2/5">
       <ul>
         <div v-for="(ctg, ind) in categories.getCategories" :key="ind"
-              class="flex flex-row items-center justify-start gap-4 mt-4 p-2 border-b-2 border-r-2">
+              class="bg-white rounded-md flex flex-row items-center justify-start gap-4 mt-4 p-2 border-b-2 border-r-2">
           <input type="checkbox" :value=ctg.id v-model="setCategories" :id=ctg.name>
           <li>
             <label :for=ctg.name>{{ctg.name}}</label>
@@ -30,10 +30,10 @@ const setVideos = computed(()=>{
       </ul>
     </div>
 
-    <div class="container flex basis-3/5">
+    <div class="container flex sm:basis-3/5">
       <ul>
         <li v-for="(video, index) in setVideos" :key="index"
-            class="container flex flex-row sm:w-max-[500px] md:w-max-[1000px] p-4 m-4 shadow-sm border rounded-md duration-300 hover:shadow-lg">
+            class="bg-white container flex flex-row sm:w-max-[500px] md:w-max-[1000px] p-4 m-4 shadow-sm border rounded-md duration-300 hover:shadow-lg">
           <a :href=video.src>
             <img :src=video.img alt="описание" class="flex-none h-32 w-60 rounded-md object-cover"/>
           </a>

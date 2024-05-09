@@ -3,13 +3,9 @@
 </script>
 
 <template>
-  <section class="mt-12 max-w-screen-lg mx-auto px-4">
-    <div>
-      <h1 class="text-gray-800 text-3xl font-semibold">
-        Дополнительное образование
-      </h1>
-    </div>
-    <ul class="mt-12 space-y-6">
+  <section class="mt-1 max-w-screen-lg mx-auto px-4">
+
+    <ul class=" pt-5 space-y-6">
       <li class="p-5 bg-white rounded-md shadow-sm">
         <a target="_blank" href="https://chpk.rchuv.ru/action/dopolniteljnoe-obrazovanie">
           <div>
@@ -114,7 +110,7 @@
   </section>
   <div class="mx-auto flex flex-col items-center mt-4">
     <span class="text-3xl mb-2 text-teal-500">Оставьте заявку на обучение</span>
-    <iframe class="shadow-2xl min-w-96 p-3" src="https://forms.yandex.ru/u/6620f73f84227c0ad3eaa5eb/?iframe=1"  name="ya-form-6620f73f84227c0ad3eaa5eb"></iframe>
+    <iframe class="bg-white shadow-2xl min-w-96 p-3" src="https://forms.yandex.ru/u/6620f73f84227c0ad3eaa5eb/?iframe=1"  name="ya-form-6620f73f84227c0ad3eaa5eb"></iframe>
   </div>
   </template>
 
