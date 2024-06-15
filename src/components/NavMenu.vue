@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <nav class="sticky top-0 bg-white border-b-2 border-gray-300 dark:bg-gray-900">
+  <nav class="sticky z-50 top-0 bg-white border-b-2 border-gray-300 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="/logo.jpg" height="50" width="50" class="object-contain"/>

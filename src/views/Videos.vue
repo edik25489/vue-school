@@ -5,7 +5,7 @@ import {computed, ref} from "vue";
 
 const videos = useVideosStore().getVideos
 const categories = useCategoriesStore()
-const setCategories = ref<Array>([]);
+const setCategories = ref<Object[]>([]);
 const setVideos = computed(()=>{
       return videos.filter(function (elem){
             if(setCategories.value.length > 0){
@@ -17,11 +17,11 @@ const setVideos = computed(()=>{
 </script>
 
 <template>
-  <div class="sm:container mt-1 mr-4 sm:mx-auto flex flex-col justify-center sm:flex-row sm:justify-between">
-    <div class="container flex sm:basis-2/5">
+  <div class="mx-auto md:container w-max-[1200px] mt-1 mr-4 sm:mx-auto flex flex-col justify-center md:flex-row md:justify-around">
+    <div class="container flex basis-2/5">
       <ul>
         <div v-for="(ctg, ind) in categories.getCategories" :key="ind"
-              class="bg-white rounded-md flex flex-row items-center justify-start gap-4 mt-4 p-2 border-b-2 border-r-2">
+              class="bg-white rounded-md flex flex-row items-center justify-start gap-4 mx-4 mt-5 p-2 border-b-2 border-r-2">
           <input type="checkbox" :value=ctg.id v-model="setCategories" :id=ctg.name>
           <li>
             <label :for=ctg.name>{{ctg.name}}</label>
@@ -30,14 +30,14 @@ const setVideos = computed(()=>{
       </ul>
     </div>
 
-    <div class="container flex sm:basis-3/5">
+    <div class="container flex basis-3/5 mx-5">
       <ul>
         <li v-for="(video, index) in setVideos" :key="index"
-            class="bg-white container flex flex-row sm:w-max-[500px] md:w-max-[1000px] p-4 m-4 shadow-sm border rounded-md duration-300 hover:shadow-lg">
+            class="bg-white flex flex-col md:flex-row sm:w-max-[500px] md:w-max-[1000px] p-4 m-5 shadow-sm border rounded-md duration-300 hover:shadow-lg">
           <a :href=video.src>
-            <img :src=video.img alt="описание" class="flex-none h-32 w-60 rounded-md object-cover"/>
+            <img :src=video.img alt="описание" class="flex-none w-[300px] h-36 rounded-md object-cover"/>
           </a>
-          <div class="flex flex-col pt-3 pl-4 pr-2 pb-3">
+          <div class="flex flex-col pt-3 sm:pl-4 pb-3">
             <h3 class="text-xl text-gray-900">
               {{ video.name }}
             </h3>
